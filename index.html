@@ -27,14 +27,22 @@
   <body>
     <div class="container">
       <form class="search-function" id="search-form">
-        <input type="search" placeholder="Type a City" id="search-text-input" autofocus />
-        <button class="btn btn-primary" type="submit" id="search-button">Search</button>
+        <div class="row">
+          <div class = "col-10">
+        <input type="search" placeholder="Type a City" class="form-control" id="search-text-input" autofocus />
+          </div>
+          <div class = "col-1">
+        <button class="btn btn-primary w-50" type="submit" id="search-button">Search</button>
       </form>
-     <span> <button type="button" class="btn btn-secondary currentButton" type = "submit" id="current-button">Current</button> </span>
+      </div>
+      <div class = "col-1">
+     <span> <button type="button" class="btn btn-secondary w-50 currentButton" type = "submit" id="current-button">Current</button> </span>
+     </div>
       <h1>
         <div class="location">
           <span class="city" id="city"></span>
-          <div class="country"></div>
+          <div class="country" id="country"></div>
+        </div>
         </div>
       </h1>
       <p>
@@ -49,7 +57,7 @@
           <a href="#" id="fahrenheit-link">°f</a>
         </div>
       </div>
-    <div class="col-4"><i class="fa-solid fa-cloud-sun icon"></i></div>
+    <div class="col-4"><i class="fa-solid fa-cloud-sun icon" id ="icon" alt="Clear"></i></div>
       <div class="col-4 conditions">
         <span id ="description"> Partly Cloudy </span> 
         <em>
