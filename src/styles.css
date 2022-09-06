@@ -1,0 +1,108 @@
+.container {
+  background-color: #fefeff;
+  width: 800px;
+  max-width: 700px;
+  border: 5px solid #885df1;
+  border-radius: 30px;
+  margin: 0 auto;
+}
+.search-function {
+  padding-top: 20px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.currentButton {
+  display: inline;
+}
+.location {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  padding: 25px 100px;
+}
+.city {
+  font-weight: bold;
+  font-size: 30px;
+  color: #272044;
+}
+.country {
+  font-size: 20px;
+  font-style: italic;
+  content: #272044;
+}
+.current-temperature {
+  font-family: "Roboto", sans-serif;
+  font-size: 70px;
+  text-align: center;
+  color: #272044;
+}
+#celsius-link {
+  text-decoration: none;
+}
+
+#fahrenheight-link {
+  text-decoration: none;
+}
+.degrees {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  color: #272044;
+  display: inline;
+}
+.icon {
+  font-size: 70px;
+  text-align: center;
+  color: #272044;
+}
+.conditions {
+  display: inline;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  font-size: 20px;
+}
+.celsius {
+  font-size: 10px;
+}
+.forecast {
+  text-align: center;
+  border: 4px solid #885df1;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #272044;
+}
+
+p {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #272044;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  border: 5px solid #885df1;
+  border-radius: 20px;
+}
+
+.row {
+  margin: 30px 10px;
+}
+.col {
+  padding: 10px;
+  border: 5px solid #885df1;
+  color: red;
+  margin: -10px 5px -5px 5px;
+  border-radius: 5px;
+  text-align: center;
+  color: #272044;
+}
+.icons {
+  display: inline;
+  font-size: 50px;
+}
+.source-code {
+  text-align: center;
+  display: block;
+}

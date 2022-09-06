@@ -11,21 +11,89 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/751576a08c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
       <form class="search-function" id="search-form">
-        <input
-          type="search"
-          placeholder="Enter a city..."
-          id="search-text-input"
-          autofocus
-        />
-        <button class="btn btn-primary" type="submit" id="search-button">
-          Search
-        </button>
+        <input type="search" placeholder="Type a City" id="search-text-input" autofocus />
+        <button class="btn btn-primary" type="submit" id="search-button">Search</button>
       </form>
+     <span> <button type="button" class="btn btn-secondary currentButton" type = "submit" id="current-button">Current</button> </span>
+      <h1>
+        <div class="location">
+          <span class="city" id="city"></span>
+          <div class="country"></div>
+        </div>
+      </h1>
+      <p>
+				Monday 15:35
+				<span id="description"> Partly Cloudy</span>
+      </p>
+      <h2>
+      <div class="row">
+      <div class="col-4 current-temperature" id="current-temperature"><span class="temperature" id = "temperature"></span>
+        <div class="degrees" id="degrees">
+          <a href="#" id="celsius-link">°c</a> | 
+          <a href="#" id="fahrenheit-link">°f</a>
+        </div>
+      </div>
+    <div class="col-4"><i class="fa-solid fa-cloud-sun icon"></i></div>
+      <div class="col-4 conditions">
+        <span id ="description"> Partly Cloudy </span> 
+        <em>
+          <div class="precipitaion" id="precipation">Precipitation: <strong>3%</strong></div>
+          <div class="humidity">Humidity: <strong id="humidity">82%</strong></div>
+<div class="wind">
+  Wind:
+  <strong id="wind">6 mph</strong>
+</div>
+        </em>
+      </span>
+      </div>
+      </h2>
+      <div class="forecast">7 Day Forecast</div>
+      <div class="row">
+        <div class="col Monday">
+          Monday
+          <div class="mon-Forecast">25°c</div>
+          <i class="fa-solid fa-cloud-sun icons"></i>
+        </div>
+        <div class="col Tuesday">
+          Tuesday
+          <div class="tue-Forecast">26°c</div>
+          <i class="fa-solid fa-cloud icons"></i>
+        </div>
+        <div class="col Wednesday">
+          Wednesday
+          <div class="wed-Forecast">29°c</div>
+          <i class="fa-solid fa-cloud icons"></i>
+        </div>
+        <div class="col Thursday">
+          Thursday
+          <div class="thu-Forecast">31°c</div>
+          <i class="fa-solid fa-sun icons"></i>
+        </div>
+        <div class="col Friday">
+          Friday
+          <div class="fri-Forecast">30°c</div>
+          <i class="fa-solid fa-cloud-sun icons"></i>
+        </div>
+      </div>
+    </div>
+    <div class="source-code">
+    <a href="https://github.com/CyraIftikhar/weather-app" >Open-source code</a> by Cyra Iftikhar
     </div>
     <script src="src/script.js"></script>
   </body>
