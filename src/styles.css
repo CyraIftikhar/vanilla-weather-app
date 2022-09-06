@@ -107,3 +107,12 @@ h2 {
   text-align: center;
   display: block;
 }
+
+.current-temperature .active {
+  color: #272044;
+  cursor: default;
+}
+
+.current-termpature .active:hover {
+  text-decoration: underline;
+}
