@@ -41,6 +41,7 @@ let month = months[now.getMonth()];
 p.innerHTML = `${hours}:${minutes} <br /> ${day} ${date} ${month}`;
 
 function displayWeatherCondition(response) {
+  ceslsiusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML =
     Math.round(ceslsiusTemperature);
@@ -58,8 +59,6 @@ function displayWeatherCondition(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  ceslsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -107,7 +106,7 @@ function convertToFahrenheit(event) {
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (ceslsiusTemperature * 9) / 5 + 32;
-  temperatureElement = Math.round(fahrenheitTemperature);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 let ceslsiusTemperature = null;
