@@ -40,15 +40,35 @@ let month = months[now.getMonth()];
 
 p.innerHTML = `${hours}:${minutes} <br /> ${day} ${date} ${month}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row">
+        <div class="col Monday" id="forecast">
+          ${day}
+          <div class="mon-Forecast">25°c</div>
+          <i class="fa-solid fa-cloud-sun icons"></i>
+        </div>`;
+  });
+
+  forecastHTML = forecastHTML + "</div>";
+  forecastElement.innerHTML = forecastHTML;
+}
 function displayWeatherCondition(response) {
   ceslsiusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML =
     Math.round(ceslsiusTemperature);
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
+  document.querySelector(
+    "#humidity"
+  ).innerHTML = `${response.data.main.humidity}%`;
+  document.querySelector("#wind").innerHTML = `${Math.round(
     response.data.wind.speed
-  );
+  )} mph`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
 
@@ -124,3 +144,4 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 search("London");
+displayForecast();
