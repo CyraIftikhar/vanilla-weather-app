@@ -38,7 +38,7 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-p.innerHTML = `${hours}:${minutes} <br /> ${day} ${date} ${month}`;
+p.innerHTML = `Last Updated: ${hours}:${minutes} <br /> ${day} ${date} ${month}`;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -86,8 +86,8 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "4fa0a71d5203b32794359d1f5d59a57e";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -178,4 +178,6 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-search("London");
+navigator.geolocation.getCurrentPosition(getCurrentPosition);
+
+search("Iraq");
