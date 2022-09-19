@@ -40,19 +40,45 @@ let month = months[now.getMonth()];
 
 p.innerHTML = `${hours}:${minutes} <br /> ${day} ${date} ${month}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
 function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#weather-forecast");
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="row">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="row">
         <div class="col Monday" id="forecast">
-          ${day}
-          <div class="mon-Forecast">25°c</div>
-          <i class="fa-solid fa-cloud-sun icons"></i>
+          ${formatDay(forecastDay.dt)}
+          <div class="mon-Forecast">${Math.round(forecastDay.temp.max)}°c</div>
+          <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt = ""
+          width = "42"
+          />
         </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + "</div>";
