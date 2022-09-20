@@ -66,8 +66,8 @@ function displayForecast(response) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="row">
-        <div class="col Monday" id="forecast">
+        `
+        <div class="col" id="forecast">
           ${formatDay(forecastDay.dt)}
           <div class="mon-Forecast">${Math.round(
             forecastDay.temp.max
@@ -79,7 +79,8 @@ function displayForecast(response) {
           alt = ""
           width = 42
           />
-        </div>`;
+        </div>
+        `;
     }
   });
 
@@ -88,8 +89,8 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "4fa0a71d5203b32794359d1f5d59a57e";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -119,7 +120,7 @@ function displayWeatherCondition(response) {
 }
 
 function search(city) {
-  let apiKey = "4fa0a71d5203b32794359d1f5d59a57e";
+  let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
   let units = "metric";
 
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
@@ -138,7 +139,7 @@ function getCurrentPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let units = "metric";
-  let apiKey = "4fa0a71d5203b32794359d1f5d59a57e";
+  let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeatherCondition);
