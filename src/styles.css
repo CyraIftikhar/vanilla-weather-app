@@ -50,9 +50,9 @@
   display: inline;
 }
 .icon {
-  font-size: 70px;
+  max-width: 200px;
+  max-height: auto;
   text-align: center;
-  color: #272044;
 }
 .conditions {
   display: inline;
@@ -98,9 +98,10 @@ h2 {
   padding: 10px;
   border: 5px solid #885df1;
   margin: -10px 5px -5px 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
   color: #272044;
+  font-weight: 500;
 }
 .icons {
   display: inline;

@@ -77,7 +77,7 @@ function displayForecast(response) {
             forecastDay.weather[0].icon
           }@2x.png"
           alt = ""
-          width = 42
+          width = 70px
           />
         </div>
         `;
@@ -107,7 +107,9 @@ function displayWeatherCondition(response) {
   )} mph`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
-
+  document.querySelector("#feelsLike").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
   document.querySelector("#country").innerHTML = response.data.sys.country;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
