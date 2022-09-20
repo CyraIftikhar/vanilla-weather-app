@@ -18,7 +18,7 @@
 .location {
   text-align: center;
   font-family: "Roboto", sans-serif;
-  padding: 25px 100px;
+  padding: 25px 100px 0 100px;
 }
 .city {
   font-weight: bold;
@@ -91,6 +91,9 @@ h2 {
   margin: 30px 10px;
 }
 
+.locationRow {
+  margin-bottom: 0;
+}
 .col {
   padding: 10px;
   border: 5px solid #885df1;
