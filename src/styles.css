@@ -90,10 +90,10 @@ h2 {
 .row {
   margin: 30px 10px;
 }
+
 .col {
   padding: 10px;
   border: 5px solid #885df1;
-  color: red;
   margin: -10px 5px -5px 5px;
   border-radius: 5px;
   text-align: center;
