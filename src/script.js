@@ -188,4 +188,4 @@ searchForm.addEventListener("submit", handleSubmit);
 
 navigator.geolocation.getCurrentPosition(getCurrentPosition);
 
-search("London");
+search("Palestine");
