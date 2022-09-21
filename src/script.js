@@ -68,16 +68,18 @@ function displayForecast(response) {
         forecastHTML +
         `
         <div class="col" id="forecast">
-          ${formatDay(forecastDay.dt)}
-          <div class="mon-Forecast">${Math.round(
-            forecastDay.temp.max
-          )}°c   ${Math.round(forecastDay.temp.min)}°c</div>
+          <span class="day">${formatDay(forecastDay.dt)}</span>
+         <div class="minMaxTemps"> <span class="mon-Forecast max-temp">${Math.round(
+           forecastDay.temp.max
+         )}°c </span><span class="min-temp"> ${Math.round(
+          forecastDay.temp.min
+        )}°c</span></div>
           <img
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png"
           alt = ""
-          width = 70px
+          width = 60px
           />
         </div>
         `;
@@ -117,6 +119,7 @@ function displayWeatherCondition(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.style.width = "120px";
 
   getForecast(response.data.coord);
 }
